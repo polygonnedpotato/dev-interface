@@ -1,0 +1,60 @@
+.bt-link{
+  color:blue
+}
+.sectiontitle{
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  color:black;
+  background-image:linear-gradient(to right, aqua, black);
+}
+.notify{
+  background-color:khaki;
+  border-width:2px;
+  border-color:lightyellow;
+  color:black;
+}
+.notify.floaty{
+  position: absolute;
+  bottom:0%;
+  left:0%;
+}
+p.sectiontitle button{
+  width:24px;
+  height:24px;
+}
+.warning {
+  background-color: black;
+  border-width: 5px;
+  border-style:ridge;
+  position: absolute;
+  bottom: 0px;
+  top:0px;
+  left:0px;
+  right:0px;
+  z-index: 10;
+  font-size:150%
+}
+@media (prefers-color-scheme: dark) {
+  body {color:white;background:black;}
+  button {background:black;border-color:gray;color:white}
+  .warning {border-color: grey}
+}
+@media (prefers-color-scheme: light) {
+  body {color:black;background:white;}
+  .warning {border-color: black}
+}
+button.confirm{
+  color:white;
+  background:green;
+  border-color:lightgreen;
+  width:100%;
+  font-size:inherit;
+}
+button.deny{
+  color:white;
+  background:red;
+  border-color:palevioletred;
+  width:100%;
+  font-size:inherit;
+}

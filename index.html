@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>dev-interface</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <p class="sectiontitle"><a href="https://www.bluetooth.com/" title="Go to Bluetooth website. (https://www.bluetooth.com/)" class="bt-link">Bluetooth</a> device interface <button onclick="document.getElementById('div-bt').hidden=true;document.getElementById('div-bt-hide').hidden=true;document.getElementById('div-bt-show').hidden=false" title="hide" id="div-bt-hide">-</button><button onclick="document.getElementById('div-bt').hidden=false;document.getElementById('div-bt-hide').hidden=false;document.getElementById('div-bt-show').hidden=true" id="div-bt-show" title="show" hidden>+</button></p>
+    <div id="div-bt">
+      <hr>
+      <button onclick="getBtDev()" title="Search for Bluetooth devices.">Search</button>
+      <hr>
+    </div>
+    <div id="warning" class="warning">
+      <h1 class="sectiontitle" style="font-size:175%;">Hold on...</h1>
+      <p>These kinds of actions can damage your device(s). Please make sure you know what you are doing before continuing.</p>
+      <p>The <a style="font-weight:bold">Web Bluetooth</a>, <a style="font-weight:bold">WebUSB</a>, <a style="font-weight:bold">Web Serial</a>, <a style="font-weight:bold">Web NFC</a>, and <a style="font-weight:bold">WebHID</a> APIs directly connects your browser to your physical devices that are directly or indirectly connected to your computer. This can include webcams, security keys, and even game controllers. While this can be helpful in some cases, the misusage of said APIs can cause temporary or even permanent damage to those devices.<br>Unless you know exactly what you're doing, please use this app ONLY for testing OR for retriving device details.</p>
+      <div style="position:absolute;bottom:0px;width:100%;font-size:150%">
+        <input id="skipConsent" type="checkbox" style="width:25px;height:25px;" title="If checked, 'dev-interface' will remember your choice in the future when you reopen this app.">Remember my choice</input>
+        <button id="consentY" class="confirm" onclick="consentResp('good')" title="confirm">Yes, I'm okay with this</button>
+        <button class="deny" onclick="document.getElementById('warning').hidden=true;consentGood=false" title="deny">No, I'm not okay with this</button>
+      </div>
+    </div>
+    <div id="notify" class="notify floaty" hidden><a id="text">Saving consent options for 90 days.</a><button title="dismiss" onclick="hideFloaty()" style="color:black;background:inherit;border-color:rgba(0,0,0,0);float:right;">x</button></div>
+    <script src="/src/misc.js"></script>
+    <script src="/src/hid.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
